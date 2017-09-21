@@ -5,18 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Kui Eugenio Bio</title>
-<!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">    
 </head>
 
-<body class="img-responsive">
+<body>
 
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid img-fadein header-image">
   <div class="container">
     <h1 class="display-3">Kui Eugenio</h1>
   <p class="lead">Koo-ee Yoo-GEE-nee-o</p>
@@ -27,64 +26,89 @@
 </div>
 
   <div class="container">
-<!-- ***************  MAIN CONTENT ******************* -->
+  <!-- ***************  MAIN CONTENT ******************* -->
     <div class="row" id="main-body">
         <div class="row justify-content-center" ">
-                <div class="col-lg-4">
-                  <img src="assets/images/bio_image.jpg" class="rounded img-fluid img-thumbnail bottomPadding" alt="aloha" width="auto" height="auto">   
+         <div class="col-sm-12 col-md-12 col-lg-12"> 
+            <div class="card-columns">
+                <div class="card"> <!-- bio-image -->
+                  <div class="card-img">
+                    <img class="card-img-top img-fluid img-fadein card-img" src="assets/images/bio_image.jpg" alt="who am i">
+                  </div>
                 </div>
-                <div class="col-lg-8">
-                    <div class="card">
-                        <div class="card-heading title">WHO am I?</div>
-                        <div class="card-block">
-                            I'm an IT professional that has been in the industry with over 20 years of demonstrated success in supporting desktops, networks, and voice systems for a diverse array of clients.
 
-                            Although successful in my background in Systems Admin and Application support, I've always wanted to explore the more creative side of technology. So when life gave me a sign, I decided to combine my problem solving skills with the my passion for web development. Let's see what pans out!
+                <div class="card"> <!-- who am i -->                
+                    <div class="card-block">
+                      <h4 class="card-title"><span class="title">WHO</span> am I?</h4>
+                      <p class="card-text">I am an IT professional that has been in the industry with over 20 years of demonstrated success in supporting desktops, networks, and voice systems for a diverse array of clients.</p>
+                    </div>
+                </div>      
 
-                            Other than shiny techie things, I have a passion for outrigger paddling, ceramic art and food!!
-
-                            Check out my portfolio for my latest applications
-                        </div>
-                    </div>  
-                </div> 
-        </div> 
-        <div class="row justify-content-center" ">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-heading title">TECHIE buzzwords that describe me</div>
-                        <div class="card-block">
-                            SQL,  MySQL , Eclipse, Android, Studio Visual Studio Community 2015, Java, VB, Objective‐C, C#, HTML 5.0, CSS, Javascript, PHP, JSON, XML, HTTP, REST Bootstrap, jQuery, Java, iOS, Windows Mobile UWP, Microsoft Framework, API integration, IIS, Firebase, NodeJS
-                        </div>
-                    </div>  
-                </div> 
-        </div> 
-        <div class="row justify-content-center" ">
-                <div class="col-lg-8 ">
-                    <div class="card">
-                        <div class="card-heading title">WHERE am I from?</div>
-
-                    </div>     
+                <div class="card card-inverse card-success mb-3 text-center"> <!-- pono -->
+                    <div class="card-block">
+                      <blockquote class="card-blockquote">
+                        <i>PONO</i>
+                          <footer>The value of integrity, of rightness and balance. The feeling of contentment when all is good and all is right.
+                          </footer>
+                      </blockquote>
+                    </div>                      
                 </div>
-                <div class="col-lg-4">
-                    <div class="thumbnail right-caption">
-                          <img src="assets/images/arizona.jpg" class="rounded img-fluid bottomPadding" alt="arizona" width="400" height="auto"> 
-                          <div class="caption">
-                                born and raised on the island of Maui, the Valley Isle, started my career on Oahu, relocated to Southern California and finally laid my roots in the Valley of the Sun, AZ
-                          </div>
-                      </div>
+
+                <div class="card"> <!-- techie words -->
+                    <div class="card-block">
+                      <h4 class="card-title"><span class="title">WHAT</span> I know</h4>
+                      <p class="card-text"><span class="mark lead">HTML5</span>, <span class="mark lead">CSS</span>, <span class="mark lead">Bootstrap</span>, <span class="mark lead">Javascript</span>, <span class="mark lead">GitHub</span>, <span class="mark lead">Responsive Web Design</span>, <span class="mark lead">API integration</span>, <span class="mark lead">Firebase</span>, <span class="mark lead">NodeJS</span>, <span class="mark lead">PHP</span>, <span class="mark lead">JSON</span>, <span class="mark lead">jQuery</span>, <span class="mark lead">NoSQL</span>, XML, REST, Java, iOS, Windows Mobile UWP, Microsoft Framework, IIS, MySQL, Eclipse, Android, Studio Visual Studio Community 2015, Java, VB, Objective‐C, C#, </p>
+                    </div>
+                    <div class="text-center" style="padding-bottom: 10px">
+                      <a href="#" class="btn btn-primary text-white">Download my Resume</a>
+                    </div>
+                </div>
+
+
+                <div class="card">  <!-- WHERE am I from -->
+                    <div class="card-block">                        
+                      <h4 class="card-title"><span class="title">WHERE</span> am I from</h4>
+                      <p class="card-text">I was born and raised on the island of Maui, the Valley Isle. I started my IT career upon graduating from the University of Hawaii for a telecom, quickly relocated to Southern California and finally laid my roots in the Valley of the Sun, AZ</p>     
+                    </div>
                 </div> 
-        </div>                
-    </div>
+
+                <div class="card"> <!-- hunt highway -->
+                  <div class="card-img">
+                    <img class="card-img-top img-fluid img-fadein card-img" src="assets/images/arizona.jpg" alt="hunt highway">
+                  </div>
+                </div>
+
+                <div class="card card-inverse card-success mb-3 text-center"> <!-- KŪLIA I KA NU‘U -->
+                  <div class="card-block">
+                    <blockquote class="card-blockquote">
+                      <i>KŪLIA I KA NU‘U</i>
+                      <footer>The value of achievement and excellence. Strive to reach the summit. Pursue personal excellence in all you do.</footer>
+                    </blockquote>
+                  </div> 
+                </div> 
+
+                <div class="card"> <!-- what's next -->           
+                    <div class="card-block">
+                      <h4 class="card-title">what's <span class="title">NEXT?</span></h4>
+                      <p class="card-text">Although successful in many years of Systems Admin and Application support, I've always wanted to explore the more creative side of technology. So when life gave me a sign, I decided to combine my problem solving skills with the my passion for web development. Let's see what pans out!</p>
+                    </div>
+                </div>
+            </div>  
+         </div>              
+        </div> <!-- row -->
+  </div>   
+</div>
+
 <!-- ***************  FOOTER ******************* -->
+  <div class="container">
     <div class="row">
+      <div class="container">
         <div class="col-sm-12 text-center" style="background-color: silver;">
            <p>© 2017, Kui Eugenio, All rights reserved</p>
         </div>  
+      </div>
     </div
-
-  </div><!--container-->
-
-
+  </div>
 </body>
 
 </html>

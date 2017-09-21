@@ -49,11 +49,14 @@ a:link, a:visited {
 .card-heading{
   padding-top: 10px;
 }
+.header-image{
+  background-image: url("../images/bio_image_main2.jpg");  
+}
 .jumbotron{
   margin-top: 50px;
   padding:20px;
   margin: 0 auto;
-  background-image: url("../images/bio_image_main.jpg");  
+
   background-size: cover;
   opacity: .9;
   background-repeat: no-repeat;
@@ -90,7 +93,10 @@ a:link, a:visited {
   background-color: white;  
   border-radius: 15px;  
 }
-
+.card-img{
+  padding: 20px; 
+  opacity: .6;
+}
 /******** portfolio objects **************/
 
 .portfolio-object{
@@ -109,15 +115,40 @@ a:link, a:visited {
     padding-left:0;
 }
 
-.thumbnail.right-caption > img {
-    float: left;
-    margin-right: 9px;
+
+.img-fadein {
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -moz-animation: fadein 2s; /* Firefox */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera */
+    animation: fadein `2s;
+}
+    
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .6; }
 }
 
-.thumbnail.right-caption {
-    float: left;
+/* Firefox */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .6; }
 }
 
-.thumbnail.right-caption > .caption {
-    padding: 4px;
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .6; }
 }
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .6; }
+}​
+
+/* Opera */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .6; }
+}​
