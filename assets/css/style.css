@@ -30,7 +30,6 @@ a:link, a:visited {
   outline-offset: 5px;
 }
 
-
 .title{
   color: #4aaaa5; 
   font-weight: bold;
@@ -50,7 +49,23 @@ a:link, a:visited {
   padding-top: 10px;
 }
 .header-image{
-  background-image: url("../images/bio_image_main2.jpg");  
+  background-image: url("../images/bio_image_main2.jpg"); 
+}
+.marvel-image{
+  display: block;
+  background: linear-gradient(
+      rgba(153, 0, 0, 0.45), 
+      rgba(153, 0, 0, 0.45)
+    ),
+    url("../images/The_Marvel_Universe.png");
+  height: 200px; !important
+}
+.center-block{
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-blockquote>footer{
+  color:#fff;
 }
 .jumbotron{
   margin-top: 50px;
@@ -58,7 +73,7 @@ a:link, a:visited {
   margin: 0 auto;
 
   background-size: cover;
-  opacity: .9;
+  opacity: .775;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;  
@@ -71,50 +86,35 @@ a:link, a:visited {
   font-size: 28px;
   font-weight: bolder;
 }
+.icons{
+  margin-top: 100px!important;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #ccc;
+    margin: 1em 0;
+    padding: 0; 
+}
 /*************** main window ******************/
 
-#bio-image, .portfolio-image {
-  display: block;
-  opacity: .7;
-  margin: 2% auto;
-}
 #main-content{
     background-color: white;
     border-radius: 15px;
     margin: 2% 2% 0 2%;
     padding: 10px;
 }
-#sidebar {
-  margin: 2% 2% 0 2%;
-  padding: 0;  
-}
-#sidebar-content {
-  display: block;
-  background-color: white;  
-  border-radius: 15px;  
-}
+
 .card-img{
   padding: 20px; 
   opacity: .6;
 }
-/******** portfolio objects **************/
 
-.portfolio-object{
-    display: inline-block;
-    margin: 10px;    
-}
-.portfolio-icon-title{
-  bottom: 18px;
-  font-family: Times, serif;
-  font-size: 18px;
-  background-color: teal;
-  color: white;
-}
 .padding-0{
     padding-right:0;
     padding-left:0;
 }
-
 
 .img-fadein {
     -webkit-animation: fadein 2s; /* Safari and Chrome */
@@ -126,29 +126,38 @@ a:link, a:visited {
     
 @keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: .6; }
+    to   { opacity: .75; }
 }
 
 /* Firefox */
 @-moz-keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: .6; }
+    to   { opacity: .75; }
 }
 
 /* Safari and Chrome */
 @-webkit-keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: .6; }
+    to   { opacity: .75; }
 }
 
 /* Internet Explorer */
 @-ms-keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: .6; }
+    to   { opacity: .75; }
 }​
 
 /* Opera */
 @-o-keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: .6; }
+    to   { opacity: .75; }
 }​
+
+@media only screen and (max-width: 667px) {
+  h1{
+    font-size: 2em; 
+  }
+  .marvel-image{
+    display: none;
+  }
+}
