@@ -1,251 +1,403 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kui Eugenio Bio</title>
-
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.9.1/sweetalert2.min.css">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="assets/js/hangman.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <!-- -->
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Kui Eugenio Bio</title>
+  <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js">
+    </script>
+    <script src="assets/js/rps.js">
+    </script>
+    <script src="assets/js/hangman.js">
+    </script>
+    <script src="assets/js/main.js">
+    </script>
+  <!-- CSS -->
+    <link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.9.1/sweetalert2.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/rps.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+  <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
-    <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">   
-
-
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn:700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+  <style>
+   @media only screen and (max-width: 640px) {
+       h1 {
+           font-size: 2em;
+       }
+       .card-text{
+         line-height: 1.25    }
+       .mark{
+         line-height: 1.25;
+       }
+       .btn{
+         margin-bottom: 10px;
+       }
+   }
+  </style>
 </head>
-<style>
-@media only screen and (max-width: 640px) {
-    h1 {
-        font-size: 2em;
-    }
-    .card-text{
-      line-height: 1.25    }
-    .mark{
-      line-height: 1.25;
-    }
-    .btn{
-      margin-bottom: 10px;
-    }
-}
-</style>
 <body>
-
-<div class="jumbotron jumbotron-fluid img-fadein header-image"> <!-- main jumbtron -->
-  <div class="container">
-    <h1 class="display-3">Kui Eugenio</h1>
+  <div class="jumbotron jumbotron-fluid img-fadein header-image"> <!-- header -->
+    <!-- main jumbtron -->
+    <div class="container">
+      <h1 class="display-3">Kui Eugenio</h1>
       <p class="lead">Koo-ee Yoo-GEE-nee-o</p>
-      <hr class="my-4">  
-      <span class="d-inline">tech avenger | web developer | ceramic artist | loves outrigger paddling  | lives  
-      &nbsp</span><span class="d-inline aloha">aloha</span>
-
-      <div class="d-flex"> <!-- icons -->
+      <hr class="my-4">
+      <span class="d-inline">tech avenger | web developer | ceramic artist | loves outrigger paddling | lives &nbsp;</span><span class="d-inline aloha">aloha</span>
+      <div class="d-flex">
+        <!-- icons -->
         <div class="card card-outline-info icons text-center">
-          <div class="card-block" style="font-size: 72px;" style="padding:0px 10px;">
+          <div class="card-block" style="font-size: 72px; padding:0px 10px;">
             <div class="row">
               <div class="col" style="padding:10px">
-                <a href="https://github.com/keugenio" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                <a href="https://github.com/keugenio" target="_blank"><i aria-hidden="true" class="fa fa-github"></i></a>
               </div>
               <div class="col" style="padding:10px">
-                <a href="https://www.facebook.com/kuieugenio" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>  
+                <a href="https://www.facebook.com/kuieugenio" target="_blank"><i aria-hidden="true" class="fa fa-facebook-official"></i></a>
               </div>
             </div>
             <div class="row">
               <div class="col" style="padding:10px">
-                <a href="https://www.linkedin.com/in/kui-eugenio-34ab289/" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/kui-eugenio-34ab289/" target="_blank"><i aria-hidden="true" class="fa fa-linkedin-square"></i></a>
               </div>
               <div class="col" style="padding:10px">
-                <a href="mailto:kui_eugenio@hotmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                <a href="mailto:kui_eugenio@hotmail.com" target="_blank"><i aria-hidden="true" class="fa fa-envelope"></i></a>
               </div>
-            </div>                           
+            </div>
           </div>
         </div>
       </div>
-
+    </div>
   </div>
-</div>
-
-<div class="container"> <!-- about me cards -->
+  <div class="container">  <!-- about me cards -->
     <div class="row" id="about-me-cards">
-        <div class="row justify-content-center" ">
-         <div class="col-sm-12 col-md-12 col-lg-12"> 
-            <div class="card-columns">
-                <div class="card"> <!-- bio-image -->
-                  <div class="card-img">
-                    <img class="card-img-top img-fluid img-fadein card-img" src="assets/images/bio_image.jpg" alt="who am i">
-                  </div>
-                </div>
-
-                <div class="card"> <!-- who am i -->                
-                    <div class="card-block">
-                      <h4 class="card-title"><span class="title">WHO</span> am I?</h4>
-                      <p class="card-text">I am an IT professional that has been in the industry with over 20 years of demonstrated success in supporting desktops, networks, and voice systems for a diverse array of clients.</p>
-                    </div>
-                </div>      
-
-                <div class="card card-inverse card-success mb-3 text-center"> <!-- pono -->
-                    <div class="card-block">
-                      <blockquote class="card-blockquote">
-                        <i>PONO</i>
-                          <footer>The value of integrity, of rightness and balance. The feeling of contentment when all is good and all is right.
-                          </footer>
-                      </blockquote>
-                    </div>                      
-                </div>
-
-                <div class="card"> <!-- techie words -->
-                    <div class="card-block">
-                      <h4 class="card-title"><span class="title">WHAT</span> I know</h4>
-                      <p class="card-text"><span class="lead">HTML5</span>, <span class="lead">CSS</span>, <span class="lead">Bootstrap</span>, <span class="lead">Javascript</span>, <span class="lead">GitHub</span>, <span class="lead">Responsive Web Design</span>, <span class="lead">API integration</span>, <span class="lead">Firebase</span>, <span class="lead">NodeJS</span>, <span class="lead">PHP</span>, <span class="lead">JSON</span>, <span class="lead">jQuery</span>, <span class="lead">NoSQL</span>, XML, REST, Java, iOS, Windows Mobile UWP, Microsoft Framework, IIS, MySQL, Eclipse, Android, Studio Visual Studio Community 2015, Java, VB, Objective‐C, C#, </p>
-                    </div>
-                    <div class="text-center" style="padding-bottom: 10px">
-                      <a href="#" class="btn btn-primary text-white">Download my Resume</a>
-                    </div>
-                </div>
-
-                <div class="card">  <!-- WHERE am I from -->
-                    <div class="card-block">                        
-                      <h4 class="card-title"><span class="title">WHERE</span> am I from</h4>
-                      <p class="card-text">I was born and raised on the island of Maui, the Valley Isle. I started my IT career upon graduating from the University of Hawaii for a telecom, quickly relocated to Southern California and finally laid my roots in the Valley of the Sun, AZ</p>     
-                    </div>
-                </div> 
-
-                <div class="card card-inverse card-success mb-3 text-center"> <!-- KŪLIA I KA NU‘U -->
-                  <div class="card-block">
-                    <blockquote class="card-blockquote">
-                      <i>KŪLIA I KA NU‘U</i>
-                      <footer>The value of achievement and excellence. Strive to reach the summit. Pursue personal excellence in all you do.</footer>
-                    </blockquote>
-                  </div> 
-                </div> 
-
-                <div class="card"> <!-- what's next -->           
-                    <div class="card-block">
-                      <h4 class="card-title">what's <span class="title">NEXT?</span></h4>
-                      <p class="card-text">Although successful in many years of Systems Admin and Application support, I've always wanted to explore the more creative side of technology. So when life gave me a sign, I decided to combine my problem solving skills with the my passion for web development. Let's see what pans out!</p>
-                    </div>
-                </div>
-
-                <div class="card"> <!-- hunt highway -->
-                  <div class="card-img">
-                    <img class="card-img-top img-fluid img-fadein card-img" src="assets/images/arizona.jpg" alt="hunt highway">
-                  </div>
-                </div>
-
-            </div>  
-         </div>              
-        </div> <!-- row -->
-    </div>   
-</div>
-
-
-<div class="container-fluid"> <!-- portfolio -->
-  <h1 class="text-white">Portfolio</h1>
-  <hr class="text-white">   
-
-  <div class="row"><!-- Marvel Hangman -->
-    <div class="col-xs-12 col-sm-6 col-md-4"> 
-          <div class="container">
-            <div class="row">
-              <div class="marvel-image p-3 rounded" >
-                    <h3 class="card-title text-white">Marvel Hangman</h3>
-                    <h6 class="card-text text-white" >A twist on a classical game where we utilize the Marvel Developer API to get random images, their corresponding names and descriptions from their entire library of characters.</h6>
-              </div> 
-            </div><!-- row -->
-            <div class="row">
-              <button type="button" class="btn btn-primary  mb-3" data-toggle="modal" data-target="#hangmanModal">
-                Try it out!
-              </button>  
+      <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="card-columns" style="color:#00008b">
+            <div class="card card-clear">
+              <!-- bio-image -->
+              <div class="card-img"><img alt="who am i" class="card-img-top img-fluid img-fadein card-img" src="assets/images/bio_image.jpg"></div>
+            </div>
+            <div class="card">
+              <!-- who am i -->
+              <div class="card-block">
+                <h4 class="card-title text-darkblue"><span class="title">Who</span> am I?</h4>
+                <p class="card-text">I am an IT professional that has been in the industry with over 20 years of demonstrated success in supporting desktops, networks, and voice systems for a diverse array of clients.</p>
+              </div>
+            </div>
+            <div class="card card-inverse card-success mb-3 text-center">
+              <!-- pono -->
+              <div class="card-block">
+                <blockquote class="card-blockquote">
+                  <i>PONO</i>
+                  <footer>
+                    The value of integrity, of rightness and balance. The feeling of contentment when all is good and all is right.
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+            <div class="card">
+              <!-- techie words -->
+              <div class="card-block">
+                <h4 class="card-title text-darkblue"><span class="title">What</span>&nbsp;&nbspI know</h4>
+                <p class="card-text"><span class="lead">HTML5</span>, <span class="lead">CSS</span>, <span class="lead">Bootstrap</span>, <span class="lead">Javascript</span>, <span class="lead">GitHub</span>, <span class="lead">Responsive Web Design</span>, <span class="lead">API integration</span>, <span class="lead">Firebase</span>, <span class="lead">NodeJS</span>, <span class="lead">PHP</span>, <span class="lead">JSON</span>, <span class="lead">jQuery</span>, <span class="lead">NoSQL</span>, <span class="lead">MySQL Workbench</span>,XML, REST, Java, iOS, Windows Mobile UWP, Microsoft Framework, IIS, Eclipse, Android, Studio Visual Studio Community 2015, Java, VB, Objective‐C, C#,</p>
+              </div>
+              <div class="text-center" style="padding-bottom: 10px">
+                <a class="btn btn-primary text-white" href="assets/docs/Kui_Eugenio_resume.pdf">Download my Resume</a>
+              </div>
+            </div>
+            <div class="card">
+              <!-- WHERE am I from -->
+              <div class="card-block">
+                <h4 class="card-title text-darkblue"><span class="title">Where</span> am I from</h4>
+                <p class="card-text">I was born and raised on the island of Maui, the Valley Isle. I started my IT career upon graduating from the University of Hawaii for a telecom, quickly relocated to Southern California and finally laid my roots in the Valley of the Sun, AZ</p>
+              </div>
+            </div>
+            <div class="card card-inverse card-success mb-3 text-center">
+              <!-- KŪLIA I KA NU‘U -->
+              <div class="card-block">
+                <blockquote class="card-blockquote">
+                  <i>KŪLIA I KA NU‘U</i>
+                  <footer>
+                    The value of achievement and excellence. Strive to reach the summit. Pursue personal excellence in all you do.
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+            <div class="card">
+              <!-- what's next -->
+              <div class="card-block">
+                <h4 class="card-title">what's <span class="title">Next?</span></h4>
+                <p class="card-text">Although successful in many years of Systems Admin and Application support, I've always wanted to explore the more creative side of technology. So when life gave me a sign, I decided to combine my problem solving skills with the my passion for web development. Let's see what pans out!</p>
+              </div>
+            </div>
+            <div class="card card-clear">
+              <!-- hunt highway -->
+              <div class="card-img"><img alt="hunt highway" class="card-img-top img-fluid img-fadein card-img" src="assets/images/arizona.jpg"></div>
             </div>
           </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-6 col-md-4 bg-info"> <!-- Multiplayer Trivia -->
-          <div class="container">
-            <div class="row">
-              <div class="p-3 rounded" >
-                    <h3 class="card-title text-white">Multiplayer Trivia</h3>
-                    <h6 class="card-text text-white" >Utilizes Google Firebase to create a concurrent trivia game that pulls questions and possible answers from the OpenTB api.  Features include a chatbox and extensive use of Bootstrap to style the overall look of the app</h6>
-              </div> 
-            </div><!-- row -->
-            <div class="row">
-              <a href="#" class="btn btn-primary text-white center-block mb-3">Try it out!</a>
-            </div>
-          </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 bg-success"><!-- RPS -->
-
-          <div class="container">
-            <div class="row">
-              <div class="p-3 rounded" >
-                    <h3 class="card-title text-white">Interactive RPS</h3>
-                    <h6 class="card-text text-white" >Another app that utilizes Google Firebase to create an online spin on the traditional game of Rock Paper Scissors.  Features include a chatbox and extensive use of Bootstrap to style the overall look of the app</h6>
-              </div> 
-            </div><!-- row -->
-            <div class="row">
-            
-            </div>
-          </div>
-
+        </div>
+      </div><!-- row -->
     </div>
   </div>
-</div>
+  <div class="container-fluid bg-portfolio">    <!-- portfolio -->
 
-<div class="modal fade" id="hangmanModal" tabindex="-1" role="dialog" aria-labelledby="hangmanModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header d-flex justify-content-center">
-        <h2 class="modal-title" id="exampleModalLabel">Marvel Hangman</h2>
-        <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div> <!-- modal-header -->
-      <div class="container" style="width: 100%">
+    <hr class="text-white" style="position:relative; top: 55px; z-index:0; border-color: #fff;">
+    <h1 class="text-white portfolio-title">Portfolio</h1>
+    <div class="row">
+      <!-- portfolio items -->
+      <div class="col-xs-12 col-sm-6 col-md-4 bg-faded">
+        <!-- Marvel Hangman -->
+        <div class="container">
           <div class="row">
+            <div class="marvel-image p-3 mt-4">
+              <h2 class="card-title text-white header-title">Marvel Hangman</h2>
+              <h4 class="card-text text-white">A twist on a classical game where we utilize the Marvel Developer API to get random images, their corresponding names and descriptions from their entire library of characters.</h4>
+            </div>
+          </div><!-- row -->
+          <div class="row">
+            <button class="btn btn-primary mb-3 center-block" data-target="#hangmanModal" data-toggle="modal" type="button">Try it out!</button>
+          </div>
+        </div>
+      </div>
+        <!-- Multiplayer Trivia --><!--       <div class="col-xs-12 col-sm-6 col-md-4 bg-info">
+
+        <div class="container">
+          <div class="row">
+            <div class="p-3 rounded">
+              <h3 class="card-title text-white header-title">Multiplayer Trivia</h3>
+              <h6 class="card-text text-white">Utilizes Google Firebase to create a concurrent trivia game that pulls questions and possible answers from the OpenTB api. Features include a chatbox and extensive use of Bootstrap to style the overall look of the app. *To utilize this app, open 2 seperate browser windows (or have a friend open one and start playing!)</h6>
+            </div>
+          </div>
+          <div class="row">
+            <a class="btn btn-primary text-white center-block mb-3" href="#">Try it out!</a>
+          </div>
+        </div>
+      </div> -->
+      <div class="col-xs-12 col-sm-6 col-md-4 bg-success">
+        <!-- RPS -->
+        <div class="container">
+          <div class="row">
+            <div class="p-3 rounded">
+              <h3 class="card-title text-white"></h3>
+              <div id="logo">
+                <h3 class="card-title text-white"><span class="header-title d-inline">Interactive</span> <span><i aria-hidden="true" class="fa fa-hand-rock-o"></i></span> <span><i aria-hidden="true" class="fa fa-hand-paper-o"></i></span> <span><i aria-hidden="true" class="fa fa-hand-scissors-o"></i></span> </h3>
+              </div>
+              <h4 class="card-text text-white">An app that utilizes Google Firebase to create an online spin on the traditional game of Rock Paper Scissors. Features include a chatbox and extensive use of Bootstrap to style the overall look of the app. <i><h5>*To utilize this app, open 2 seperate browser windows (or have a friend open one and start playing!)</i></h5></h4>
+              <div class="text-center" style="font-size: 40px">
+                <span class="d-inline"><i aria-hidden="true" class="fa fa-hand-rock-o"></i><i aria-hidden="true" class="fa fa-hand-paper-o"></i><i aria-hidden="true" class="fa fa-hand-scissors-o"></i>
+                <button class="btn btn-primary" data-target="#rpsModal" data-toggle="modal" type="button">Try it out!</button></span>
+              </div>
+            </div>
+          </div><!-- row -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- hangman modal -->
+    <div aria-hidden="true" aria-labelledby="hangmanModalLabel" class="modal fade" id="hangmanModal" role="dialog" tabindex="-1">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header d-flex justify-content-center">
+            <h2 class="modal-title" id="exampleModalLabel">Marvel Hangman</h2><button aria-label="Close" class="close ml-auto" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+          </div><!-- modal-header -->
+          <div class="container" style="width: 100%">
+            <div class="row">
               <div class="col-sm-6 pull-left">
-                  <div class="container">
-                      <p>Guess the Marvel comic character name.</p>
-                      <p id="instructions">Just begin typing your guesses to start.</p><br>
-                      <div id="guessType">Current Guess:</div>
-                      <div id="marvelCharacter" class="text-center">
-                          loading...
-                      </div>
-                      <div id="description"> if nothing loads, Marvel server may be busy. Try again.</div>  
-                      <hr>                        
-                      <div id="messageboard"></div> 
-                      <hr>
-                      <button class="btn btn-primary" id="btnReload">Reload</button>
+                <div class="container">
+                  <p>Guess the Marvel comic character name.</p>
+                  <p id="instructions">Just begin typing your guesses to start.</p><br>
+                  <div id="guessType">
+                    Current Guess:
                   </div>
+                  <div class="text-center" id="marvelCharacter">
+                    loading...
+                  </div>
+                  <div id="description">
+                    if nothing loads, Marvel server may be busy. Try again.
+                  </div>
+                  <hr>
+                  <div id="messageboard"></div>
+                  <hr>
+                  <button class="btn btn-primary" id="btnReload">Reload</button>
+                </div>
               </div>
               <div class="col-sm-6">
-                  <figure>
-                      <img id="marvelCharacterImage" class="figure-img img-fluid rounded text-center d-block" alt="character image"></img>
-                      <figcaption class="figure-caption align-bottom text-center" id="marvelCopyright"></figcaption>
-                  </figure>                    
-              </div> 
+                <figure>
+                  <img alt="character image" class="figure-img img-fluid rounded text-center d-block" id="marvelCharacterImage">
+                  <figcaption class="figure-caption align-bottom text-center" id="marvelCopyright"></figcaption>
+                </figure>
+              </div>
+            </div><!-- row -->
+          </div><!-- container -->
+        </div><!-- modal-content -->
+      </div><!-- modal-dialog -->
+    </div>
 
-          </div> <!-- row -->       
-      </div> <!-- container -->
-    </div> <!-- modal-content -->
-  </div>  <!-- modal-dialog -->  
-</div> <!-- modal -->
+  <!-- rps modal -->
+    <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="rpsModal" role="dialog" tabindex="-1">
+      <div class="container">
+        <div class="modal-dialog d-inline" role="document">
+          <div class="modal-content">
+            <div class="modal-header d-flex justify-content-center">
+              <h2 class="modal-title" id="exampleModalLabel">
+              <span class="header-title-dark d-inline">Interactive</span> <span class="d-inline header-title-dark" style="white-space: nowrap;"><i aria-hidden="true" class="fa fa-hand-rock-o"></i> <i aria-hidden="true" class="fa fa-hand-paper-o"></i><i aria-hidden="true" class="fa fa-hand-scissors-o"></i></span>
+              </h2><button aria-label="Close" class="close ml-auto" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+            </div><!-- modal-header -->
+            <div class="modal-body">
+              <!-- ********************* -->
+              <div class="container">
+                <!-- Main Window -->
+                <div class="row ">
+                  <div class="panel panel-primary" style="width: 100%">
+                    <!-- ***************** rps heading ****************** -->
+                      <div class="panel-heading d-flex align-items-center justify-content-end">
+                        <div id="standings" style="margin-right: 30px;">
+                          <label for="wins">Wins:</label> <span id="wins">0</span> <label for="losses">Losses:</label> <span id="losses">0</span> <label for="ties">Ties:</label> <span id="ties">0</span>
+                        </div>
+                        <div id="last5MovesDiv">
+                          <label for="score" id="last5MovesLabel"></label> <span id="last5Moves"></span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <!-- info button -->
+                           <a href="#" id="infoBtn"><i aria-hidden="true" class="fa fa-info-circle infoIcon"></i></a>
+                        </div>
+                      </div><!-- panel-heading -->
+                    <!-- ***************** rps body ****************** -->
+                      <div class="panel-body">
+                        <div class="row align-items-center justify-content-center">
+                          <div class="col-md-6 center-block">
+                            <div class="panel panel-danger">
+                              <div class="panel-heading center-block" id="playerName">
+                                Player <span><i aria-hidden="true" class="fa fa-pencil"></i></span>
+                              </div>
+                              <div class="panel-body d-flex row justify-content-center">
+                                <div class="playbutton" data-value="rock" id="playerRockIcon">
+                                  <i aria-hidden="true" class="fa fa-hand-rock-o"></i>
+                                </div>
+                                <div class="playbutton" data-value="paper" id="playerPaperIcon">
+                                  <i aria-hidden="true" class="fa fa-hand-paper-o"></i>
+                                </div>
+                                <div class="playbutton" data-value="scissor" id="playerScissorIcon">
+                                  <i aria-hidden="true" class="fa fa-hand-scissors-o"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div><!-- col-md-6 -->
+                          <div class="col-md-2 d-flex center-block">
+                            <div class="evaluator mt-2 mb-2 center-block" id="comparer">
+                              []
+                            </div>
+                          </div><!-- col-md-2 -->
+                          <div class="col-md-4 center-block">
+                            <div class="panel panel-danger">
+                              <div class="panel-heading" id="opponentName">
+                                Opponent
+                              </div>
+                              <div class="panel-body d-flex" style="white-space: nowrap;">
+                                <div class="waiting center-block" id="waitingIcon">
+                                  <i class="fa fa-cog fa-spin fa-fw"></i>
+                                </div>
+                                <div class="opponentButton center-block" data-value="rock" id="opponentRockIcon">
+                                  <i class="fa fa-hand-rock-o"></i>
+                                </div>
+                                <div class="opponentButton center-block" data-value="paper" id="opponentPaperIcon">
+                                  <i aria-hidden="true" class="fa fa-hand-paper-o"></i>
+                                </div>
+                                <div class="opponentButton center-block" data-value="scissor" id="opponentScissorIcon">
+                                  <i aria-hidden="true" class="fa fa-hand-scissors-o"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div><!-- col-md-4 -->
+                        </div><!-- row -->
+                        <div class="row align-items-center justify-content-center" style="border-top: 4px solid; margin-top: 30px;">
+                          <div class="col-lg-6">
+                            <!-- message board -->
+                            <div class="d-flex" pull-left id="messageBoard">
+                              Welcome to Interactive RPS!
+                            </div>
+                          </div><!-- col-lg-6 -->
+                          <div class="col-lg-6">
+                            <!-- chat -->
+                            <div class="d-flex pull-right mt-3" id="chatDiv">
+                              <form id="chatForm" name="chatForm">
+                                  <div class="form-group" id="chatGroup">
+                                    <input id="chatInput" placeholder="...smack" type="text"> <button id="chatButton" class="btn btn-default" type="submit"><i aria-hidden="true" class="fa fa-commenting-o"></i></button>
+                                  </div>
+                              </form>
+                            </div><!-- chatDiv -->
+                          </div><!-- col-lg-6 -->
+                        </div><!-- flex-row -->
+                      </div><!-- panel-body -->
+                    <!-- ***************** rps footer ****************** -->
+                    <div class="panel-footer d-flex align-items-center justify-content-start">
+                      <div class="ml-auto" id="logo">
+                        <span class="header-title d-inline header-title" style="font-size: 12px;">Interactive</span>
+                        <span style="white-space: nowrap;"><i aria-hidden="true" class="fa fa-hand-rock-o"></i><i aria-hidden="true" class="fa fa-hand-paper-o"></i><i aria-hidden="true" class="fa fa-hand-scissors-o"></i></span>
+                      </div>
+                    </div>
+                  </div><!-- panel -->
+                </div><!--  row -->
+              </div><!-- Main Window -->
+              <!-- ********************** -->
+            </div>
+            <div class="modal-footer">
+              <!-- empty -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<!-- ***************  FOOTER ******************* -->
-<div class="row mt-2" style="background-color: silver;">
-  <div class="container">       
-      <div class="text-center">
-         <p>© 2017, Kui Eugenio, All rights reserved</p>
-      </div>  
-  </div>
-</div>
+  <!-- rps welcome modal -->  
+    <!--************************ Welcome Window ************************* --> 
+      <div id="editPlayerName" class="modal fade" role="dialog" style="color: blue">
+        <div class="modal-dialog" id="enterPlayerName">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header d-flex align-items-center text-center">
+              <h4 class="modal-title center-block" style="width: 100%">Sign in</h4>
+              <button type="button" class="close ml-auto" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <form id="playerForm">
+                <div class="form-group d-flex align-items-center">
+                  <label for="name">Name:</label>
+                  <input type="name" class="form-control" id="playerNameInput">
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn btn-default">Submit</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+              </form>          
+            </div>
+          </div>
+        </div>
+      </div> <!-- editplayername --> 
+
+
+  <!-- ***************  FOOTER ******************* -->
+    <div class="row mt-2" style="background-color: silver;">
+      <div class="container">
+        <div class="text-center">
+          <p>© 2017, Kui Eugenio, All rights reserved</p>
+        </div>
+      </div>
+    </div>
 </body>
-
 </html>

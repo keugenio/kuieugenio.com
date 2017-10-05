@@ -1,27 +1,33 @@
-
 body{
   padding: 0;
   font-family: 'Arial', 'Helvetica Neue', Helvetica, serif;
   font-size: 16px;
   line-height: 150%;
-  color: #777777;
+  color: #fff;!important
   margin: 0 auto;
-  background-image: url("../images/bg.jpg");  
+  background-image: url("../images/bg.JPG");  
   background-size: cover;
-  background-color: #00008b;
-  opacity: .9;
+  background-color: rgba(0, 0, 139, .6);
+
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;  
 }
-
+.bg-portfolio{
+  background-color: rgba(0, 0, 139, .6);
+}
+.portfolio-title{
+  font-family: 'Vollkorn', serif;
+}
 /* general tags */
 
-
+a{
+  color: #fff
+}
 a:link, a:visited {
     padding: 10px;
     text-decoration: none;
-    color: #777;
+    color: #fff;
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
 }
 
@@ -35,9 +41,7 @@ a:link, a:visited {
   font-weight: bold;
   text-align: center;
   font-size: 24px;
-}
-.panel {
-  padding: 3px 10px;
+  font-family: 'Kaushan Script', cursive;
 }
 .row {
   margin-bottom: 10px;
@@ -45,8 +49,20 @@ a:link, a:visited {
 .bottomPadding {
   margin-bottom: 10px;
 }
+
+.card-text, .card-title, text-darkblue, .card-outline-info>a{
+  color: #00008B;!important
+}
 .card-heading{
   padding-top: 10px;
+}
+.card-clear{
+  background-color: rgba(255,0,0,0); 
+  border:none;
+}
+.card-img{
+  padding: 20px; 
+  opacity: .9;
 }
 .header-image{
   background-image: url("../images/bio_image_main2.jpg"); 
@@ -54,11 +70,12 @@ a:link, a:visited {
 .marvel-image{
   display: block;
   background: linear-gradient(
-      rgba(153, 0, 0, 0.45), 
-      rgba(153, 0, 0, 0.45)
+      rgba(153, 0, 0, 0.65), 
+      rgba(153, 0, 0, 0.65)
     ),
     url("../images/The_Marvel_Universe.png");
-  height: 200px; !important
+/*  height: 200px; !important*/
+  border-radius: 10px;
 }
 .center-block{
   margin-left: auto;
@@ -78,8 +95,13 @@ a:link, a:visited {
   background-attachment: fixed;
   background-position: center;  
   min-height: 768px;
-  color: #fff;
   margin-bottom: 50px;
+}
+.jumbotron>p{
+  color: #fff;
+}
+.modal{
+  color: #00008B;!important
 }
 .aloha{
   font-family: 'Homemade Apple', cursive;
@@ -106,10 +128,7 @@ hr {
     padding: 10px;
 }
 
-.card-img{
-  padding: 20px; 
-  opacity: .6;
-}
+
 
 .padding-0{
     padding-right:0;
@@ -153,11 +172,16 @@ hr {
     to   { opacity: .75; }
 }​
 
-@media only screen and (max-width: 667px) {
+
+@media only screen and (max-width: 768px) {  
+  body{
+    max-width: 768px;
+  }
   h1{
     font-size: 2em; 
   }
   .marvel-image{
     display: none;
-  }
+  }  
 }
+
