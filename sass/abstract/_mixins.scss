@@ -1,0 +1,37 @@
+@mixin lower_triangle {
+    clip-path: polygon(0 0, 0 100%, 100% 90vh, 100% 0);
+    @include response(bd)  {
+        clip-path: polygon(polygon(0 0, 100% 0, 100% 90%, 0 96%))
+    }
+}
+
+// media query manager
+/*
+    0-600px: phone
+    600:900px; tablet
+    900-1200px; tablet landscape
+    [1200-1800] is where normal styles apply
+    1800px+: big desktop
+
+$breakpoing arguement choices:
+- phone
+-tab-port
+-tab-land
+big-desktop
+*/
+
+@mixin response($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width:600px) { @content }; //600px
+    }
+    @if $breakpoint == tabPort {
+        @media (max-width:900px) { @content }; //900px
+    }
+    @if $breakpoint == tabLand {
+        @media (max-width:1200px) { @content }; //1200px
+    }
+    @if $breakpoint == bd {
+        @media (min-width:1800px) { @content };
+    }            
+
+}
