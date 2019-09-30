@@ -1,15 +1,28 @@
 {
-  "name": "ice-cream-db-connection",
-  "version": "1.0.0",
-  "description": "",
+  "name": "kuieugenio.com",
+  "version": "2.0.0",
+  "description": "my website",
   "main": "iceCreamDBConnection.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [],
-  "author": "",
+  "author": "kui eugenio",
   "license": "ISC",
   "dependencies": {
-    "mysql": "^2.13.0"
-  }
+    "live-server": "^1.2.1",
+    "mysql": "^2.13.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.22.12"
+  },
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss  css/main.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver compile:sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keugenio/kuieugenio.com.git"
+  },
+  "bugs": {
+    "url": "https://github.com/keugenio/kuieugenio.com/issues"
+  },
+  "homepage": "https://github.com/keugenio/kuieugenio.com#readme"
 }
