@@ -30,12 +30,10 @@
             </div>
         </div>   
         <!-- ***************  FOOTER ******************* -->
-        <div class="row mt-2" style="background-color: silver;">
-        <div class="container">
-            <div class="text-center">
-            <p>© 2017, Kui Eugenio, All rights reserved</p>
+        <div class="row mt-2 footer">
+            <div class="w-100">
+                <p>© 2019, Kui Eugenio, All rights reserved</p>
             </div>
-        </div>
         </div>        
     </div>
 </template>
@@ -47,10 +45,14 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-   @import 'main.scss';
+   @import '../../sass/main.scss';
   .lead {
     font-size: 1.8rem;
     color:$color-primary;
    }
- 
+    .footer {
+        font-size: 1rem;
+        background: silver;
+        text-align: center;
+    }
 </style>
