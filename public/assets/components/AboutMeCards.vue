@@ -72,21 +72,43 @@
       <h2 class="card-title text-white">Clicky With Friends</h2>
       <h4 class="card-text text-white">Memorization game written with React and utilizes the random.me api for images. The interface is simple and the game intuitive but the backend is challenging and complex.</h4>
         <div class="card-footer  d-flex justify-content-around my-3">								
-            <button href="https://keugenio.github.io/clicky/" target="_blank" class="btn btn-success border-dark-blue">
-              Try It out
+            <button href="https://keugenio.github.io/clicky/" target="_blank" class="btn btn-success border-dark-blue" @click="showModal">
+              Play
             </button>
             <a href="https://github.com/keugenio/clicky" class="btn btn-success" target="_blank">
               <i class="fa fa-github" aria-hidden="true"></i>
             </a>								
         </div>
     </div> 
+    <modals-container/>
   </div>
 </template>
 
+<script>
+import Clicky from './Clicky'
+
 export default {
   name: 'AboutMeCards',
-}
-<script>
+  components: {Clicky},
+  methods: {
+    showModal () {
+      var w = .9*window.innerWidth;
+      var h = .9*window.innerHeight;
+
+      this.$modal.show(Clicky, {
+        msg: 'This text is passed as a property'
+      }, {
+        draggable: true,
+        width:w,
+        height:h,
+        scrollable:true,
+      })
+    },
+    hideModal () {
+      this.$modal.hide('ClickyModal');
+    }
+  }
+} 
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
