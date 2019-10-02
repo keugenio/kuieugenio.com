@@ -86,6 +86,9 @@ html {
 .bg-fixed {
   background-attachment: fixed; }
 
+.bg-canary {
+  background-color: #ffeb3b; }
+
 .text-shadow-black {
   text-shadow: 3px 3px 3px #000000; }
 

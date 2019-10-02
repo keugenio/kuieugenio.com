@@ -25,7 +25,7 @@
           <h4 class="card-text text-white">A twist on a classical game where we utilize the Marvel Developer API to get random images, their corresponding names and descriptions from their entire library of characters.</h4>
         </div>
         <div class="card-footer d-flex justify-content-around my-3">
-          <button class="btn bg-success border-dark-blue" data-target="#hangman-modal" data-toggle="modal" type="button">Play</button>
+          <button class="btn bg-success border-dark-blue" data-target="#hangman-modal" data-toggle="modal" type="button" @click="showModal('Marvel')">Play</button>
           <a href="https://github.com/keugenio/marvelHangman" class="btn btn-success" target="_blank">
             <i class="fa fa-github rounded" aria-hidden="true"></i>
           </a>
@@ -39,7 +39,7 @@
         </div>
         <img class="card-img-bottom" src='../images/ronSwanson.png'/>
         <div class="card-footer d-flex justify-content-around my-3">
-          <button class="btn bg-success border-dark-blue" data-target="#hangman-modal" data-toggle="modal" type="button">Play</button>
+          <button class="btn bg-success border-dark-blue" data-target="#hangman-modal" data-toggle="modal" type="button" @click="showModal('RonSwanson')">Try it</button>
           <a href="https://github.com/keugenio/marvelHangman" class="btn btn-success" target="_blank">
             <i class="fa fa-github rounded" aria-hidden="true"></i>
           </a>
@@ -72,7 +72,7 @@
       <h2 class="card-title text-white">Clicky With Friends</h2>
       <h4 class="card-text text-white">Memorization game written with React and utilizes the random.me api for images. The interface is simple and the game intuitive but the backend is challenging and complex.</h4>
         <div class="card-footer  d-flex justify-content-around my-3">								
-            <button href="https://keugenio.github.io/clicky/" target="_blank" class="btn btn-success border-dark-blue" @click="showModal">
+            <button href="https://keugenio.github.io/clicky/" target="_blank" class="btn btn-success border-dark-blue" @click="showModal('Clicky')">
               Play
             </button>
             <a href="https://github.com/keugenio/clicky" class="btn btn-success" target="_blank">
@@ -86,23 +86,47 @@
 
 <script>
 import Clicky from './Clicky'
+import RonSwanson from './RonSwanson'
+import Marvel from './Marvel'
 
 export default {
   name: 'AboutMeCards',
-  components: {Clicky},
+  components: {Clicky, RonSwanson},
   methods: {
-    showModal () {
+    showModal (modalName) {
       var w = .9*window.innerWidth;
       var h = .9*window.innerHeight;
+      let openModalName=''
 
-      this.$modal.show(Clicky, {
-        msg: 'This text is passed as a property'
-      }, {
-        draggable: true,
-        width:w,
-        height:h,
-        scrollable:true,
-      })
+      switch (modalName) {
+        case 'Clicky':
+          this.$modal.show(Clicky,{},{
+            draggable: true,
+            width:w,
+            height:h,
+            scrollable:true,
+          })
+          break;
+        case 'RonSwanson':
+          this.$modal.show(RonSwanson,{},{
+            draggable: true,
+            width:w,
+            height:h,
+            scrollable:true,
+          })
+          break;
+        case 'Marvel':
+          this.$modal.show(Marvel,{},{
+            draggable: true,
+            width:w,
+            height:h,
+            scrollable:true,
+          })
+          break;                
+        default:
+          break;
+      }
+
     },
     hideModal () {
       this.$modal.hide('ClickyModal');
