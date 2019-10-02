@@ -22,7 +22,8 @@ export default {
         width: 100vw;
         & .copyright {
             padding:1rem;
-            background: silver;
+            background:#1C2331;
+            color: $color-light-blue;
         }
     }
 </style>

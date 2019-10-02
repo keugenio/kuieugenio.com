@@ -51,6 +51,13 @@ big-desktop
   100% {
     opacity: 1; } }
 
+.grow {
+  transition: all .2s ease-in-out; }
+
+.grow:hover {
+  transform: scale(1.1);
+  z-index: 10; }
+
 * {
   margin: 0px;
   padding: 0px;
@@ -156,11 +163,14 @@ ul li {
       padding: 0px;
       line-height: 1.2; } }
 
+.text-dark-blue {
+  color: #0d47a1; }
+
 .footer {
   font-size: .75em; }
 
 .jumbotron {
-  background-image: linear-gradient(to right, rgba(13, 71, 161, 0.75), rgba(66, 179, 244, 0.05));
+  background-image: linear-gradient(to right, rgba(13, 71, 161, 0.75), rgba(51, 181, 229, 0.05));
   background-color: #fafafa;
   /* Used if the image is unavailable */
   min-height: 95vh;
@@ -181,20 +191,20 @@ ul li {
     display: table-row; }
   @media (max-width: 600px) {
     .jumbotron {
-      background-image: linear-gradient(to right, rgba(13, 71, 161, 0.75), rgba(66, 179, 244, 0.05)); } }
+      background-image: linear-gradient(to right, rgba(13, 71, 161, 0.75), rgba(51, 181, 229, 0.05)); } }
   @media (max-width: 900px) {
     .jumbotron {
-      background-image: linear-gradient(to right, rgba(13, 71, 161, 0.75), rgba(66, 179, 244, 0.05)); } }
+      background-image: linear-gradient(to right, rgba(13, 71, 161, 0.75), rgba(51, 181, 229, 0.05)); } }
   @media (max-width: 1200px) {
     .jumbotron {
-      background-image: linear-gradient(to right, rgba(13, 71, 161, 0.75), rgba(66, 179, 244, 0.05)); } }
+      background-image: linear-gradient(to right, rgba(13, 71, 161, 0.75), rgba(51, 181, 229, 0.05)); } }
 
 #jumbtron_button {
   padding: 10px 20px;
   border-radius: 20px;
   text-transform: uppercase;
   display: inline-block;
-  background-color: #42B3F4;
+  background-color: #33b5e5;
   position: relative;
   color: #0d47a1;
   transition: all .2s;
@@ -256,18 +266,7 @@ body {
   background: #e1f5fe;
   position: relative;
   display: block;
-  height: 100vh;
-  width: 100vw; }
-
-body::after {
-  content: "";
-  opacity: .35;
-  top: -60px;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: 1;
+  width: 100%;
   background-image: url("../images/bg_main.jpg");
   background-size: cover;
   background-attachment: fixed;
