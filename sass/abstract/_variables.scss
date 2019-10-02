@@ -5,10 +5,12 @@ $color-info:#42B3F4;
 $color-black: #000000;
 $color-white: #FFFFFF;
 $color-dark:#263238;
-$color-light-blue: #fffde7;
+$color-light-blue: #e1f5fe;
+$color-dark-blue:#0d47a1;
 $color-gray-light-1:#f7f7f7;
-
+$color-yellow:#ffeb3b;
 $text-dark: #263238;
 $text-off-white: $color-off-white;
 
 $fade-primary: linear-gradient(to right, rgba($color-primary, .25), rgba($color-primary, .75));
+$background-image: url("../images/bg_main.jpg");

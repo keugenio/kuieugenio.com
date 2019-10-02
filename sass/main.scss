@@ -16,4 +16,23 @@
 
 body {
     background:$color-light-blue;
+    position:relative;
+    display: block;
+    height:100vh;
+    width: 100vw;
+}
+body::after {
+    content:"";
+    opacity: .35;
+    top:-60px;
+    left:0;
+    bottom:0;
+    right:0;
+    position: absolute;
+    z-index:1;  
+    background-image: $background-image;
+    background-size: cover;    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat; 
 }
