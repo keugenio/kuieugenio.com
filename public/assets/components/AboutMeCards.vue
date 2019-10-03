@@ -22,11 +22,11 @@
         <img class="card-img-top" src='../images/The_Marvel_Universe.png'/>
         <div class="card-body rounded">
           <h2 class="card-title text-white header-title">Marvel Hangman</h2>
-          <h4 class="card-text text-white">A twist on a classical game where we utilize the Marvel Developer API to get random images, their corresponding names and descriptions from their entire library of characters.</h4>
+          <h4 class="card-text text-white">A twist on a classical game where we utilize the Marvel Developer API to get random images, their corresponding names and descriptions from their entire library of characters.  The app is written in Vue and is a component of this site, a single file component written in Vue as well.</h4>
         </div>
         <div class="card-footer d-flex justify-content-around my-3">
           <button class="btn bg-success border-dark-blue" data-target="#hangman-modal" data-toggle="modal" type="button" @click="showModal('Marvel')">Play</button>
-          <a href="https://github.com/keugenio/marvelHangman" class="btn btn-success" target="_blank">
+          <a href="https://github.com/keugenio/kuieugenio.com" class="btn btn-success" target="_blank">
             <i class="fa fa-github rounded" aria-hidden="true"></i>
           </a>
         </div>
