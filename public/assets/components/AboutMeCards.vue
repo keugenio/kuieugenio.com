@@ -119,8 +119,7 @@ export default {
           this.$modal.show(Marvel,{},{
             draggable: true,
             width:w,
-            height:h,
-            scrollable:true,
+            height:h*.9,
           })
           break;                
         default:

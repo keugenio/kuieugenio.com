@@ -1,17 +1,25 @@
 <template>
-    <div class="d-flex flex-column align-items-center jusfity-content-center p-3">
-        <button class="ml-auto" @click="newGame">
-            <i class="fa fa-play-circle" />
-        </button>
-        <button class="ml-auto" @click="$emit('close')">
-            <i class="fa fa-close" />
-        </button>
-        <div class="container" style="width: 100%">
-            <div class="row">
-                <div class="col-sm-6 pull-left">
-                <div class="container text-dark">
+    <div class="d-flex flex-column align-items-center jusfity-content-center p-3 h-100">
+        <div class="modal-header d-flex flex-row w-100">
+            <h2 class="display-5 modal-title">Marvel Hangman</h2>
+            <button class="ml-auto fa-2x" @click="$emit('close')">
+                <i class="fa fa-close" />
+            </button>
+
+        </div>
+        <div class="modal-body">
+            <div v-if="showButton" class="mx-auto">
+                <button class="fa-5x mx-auto btn-success px-5" @click="newGame">
+                    <i class="fa fa-play-circle" />
+                </button>           
+            </div>
+            <div v-else class="mx-auto fa-5x" :class="[!hideOffScreen ? 'topZero' : 'topMinusNineThousand']">
+                <i class="fa fa-cog fa-spin text-primary"></i>
+            </div>
+             <div class="row mainCol" :class="[hideOffScreen ? 'topZero' : 'topMinusNineThousand']">
+                <div class="col-sm-6">
                     <p>Guess the Marvel comic character name.</p>
-                    <p id="instructions">Just begin typing your guesses to start.</p><br>
+                    <p id="instructions" v-if="gameInProgress">Just begin typing your guesses to start.</p><br>
                     <div ref="guessType">
                     Current Guess:
                     </div>
@@ -24,28 +32,30 @@
                     <hr>
                     <div ref="messageboard"></div>
                     <hr>
-                    <button class="btn box-shadow btn-primary" ref="btnReload">Reload</button>
-                </div>
+                    <button class="btn box-shadow btn-primary" ref="btnReload" @click="resetGame">Reload</button>
                 </div>
                 <div class="col-sm-6">
-                <figure>
-                    <img alt="character image" class="figure-img img-fluid rounded text-center d-block" ref="marvelCharacterImage">
-                    <figcaption class="figure-caption align-bottom text-center" ref="marvelCopyright"></figcaption>
-                </figure>
+                    <figure class="d-table">
+                        <img alt="character image" class="rounded align-self-center w-100 h-auto" ref="marvelCharacterImage">
+                        <figcaption class="caption align-bottom text-center d-table-caption" ref="marvelCopyright"></figcaption> 
+                    </figure>
+
                 </div>
             </div><!-- row -->
-            </div><!-- container -->
-        </div>
+        </div><!-- container -->
+    </div>
 </template>
 <script>
 import axios from 'axios';
+import marvelKeys from './marvelKeys'
+import Swal from 'sweetalert2'
 
 export default {
     name: "Marvel",
     data: function(){
         return {
-            hash:"5545b6f2f668966888319100a93d32c5",
-            publickey : "8a10078d47a38b6a5c7272b337efb398",
+            hash:marvelKeys.hash,
+            publickey : marvelKeys.public,
             startsWith:'',
             offset:0,
             randomCharacterName:0,
@@ -53,15 +63,20 @@ export default {
             randomIndex:Math.floor((Math.random() * 20) + 1),
             answerArray : [],
             guessArray: [],
+            guessString:'',
             allGuessArray : [],
             incorrectGuessAmt:0,
             guessedLetter:"",
             description:"", 
-            wikiURL : "",            
+            wikiURL : "",
+            showButton:true,
+            hideOffScreen:false,
+            gameInProgress:"true", 
         }
     },
     methods:{
         resetGame(){
+            this.hideOffScreen = false;
             this.$refs.messageboard.innerHTML = "";
             this.randomCharacterName=0;
             this.randomCharacterNameLength=0;
@@ -72,13 +87,16 @@ export default {
             this.incorrectGuessAmt=0;
             this.guessedLetter="";
             this.description=""; 
-            this.wikiURL = "";	
+            this.wikiURL = "";
+            this.newGame();
         },
         newGame(){
             let self = this
+            self.gameInProgress = true;
+            self.showButton = false
             self.startsWith = this.randomLetter();
             self.offset = this.getOffSet(this.startsWith);
-            self.randomIndex = Math.floor((Math.random() * 20) + 1);
+            
             var htmlCall = "http://gateway.marvel.com/v1/public/characters?" + 
                                             "nameStartsWith=" + self.startsWith +
                                         "&offset=" + self.offset +
@@ -87,11 +105,14 @@ export default {
                                             "&hash=" + self.hash;
 
             axios.get(htmlCall)
-            .then(function(dowloadedJSON) {	
-                const results = dowloadedJSON.data.data.results
+            .then(function(downloadedJSON) {	
+                // filter out the characters that don't have a picture
+                const results = downloadedJSON.data.data.results.filter(marvel => marvel.thumbnail.path != "http://i.annihil.us/u/prod/marvel/i/mg/2/70/5239be7020a11" && marvel.thumbnail.path != "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available")
+                self.randomIndex = Math.floor((Math.random() * results.length) + 1);
                 var characterImage=results[self.randomIndex].thumbnail.path + "/portrait_uncanny.jpg";
-                var copyright = results.attributionHTML;
+                var copyright = downloadedJSON.data.attributionHTML;
 
+                self.hideOffScreen = true;
                 self.wikiURL = results[self.randomIndex].urls[0].url;
                 self.randomCharacterName = results[self.randomIndex].name;
                 self.description = results[self.randomIndex].description || 'no description provided by Marvel API';
@@ -100,24 +121,14 @@ export default {
                 self.setupGuessArray();
 
                 self.$refs.marvelCharacterImage.src=characterImage;
-                self.$refs.marvelCharacter.innerHTML = self.printArray(self.guessArray);
+                self.$refs.marvelCharacter.innerHTML = self.guessArray.join('');
                 self.$refs.marvelCopyright.innerHTML = copyright;
                 self.$refs.description.innerHTML = self.description;
-
-                    // document.onkeyup = function(event) {
-                    //     //if key pressed is valid and not already in the all guessed array
-                    //         if(this.isValidKey(event.key) && allGuessArray.indexOf(event.key) < 0){    	
-                    //     this.evaluateGuess(event.key);
-                    //     this.updateMessageBoard();
-                    //     }
-                    //     document.getElementById("instructions").style.display = "none";
-                    // };
                 });	
         },
         isValidKey(str) {
             return str.length === 1 && str.match(/[0-9a-z]/i);
         },
-
         randomLetter() {
             var text = "";
             var possible = "abcdefghijklmnopqrstuvwxyz";
@@ -213,7 +224,6 @@ export default {
                     break;
                 }
         },
-
         setupGuessArray() {
             // push * as placeholders for letters and numbers. Fill in common characters (spaces, periods, parenthesis etc)
             // so players do not need to guess those
@@ -237,7 +247,13 @@ export default {
                         break;				
                     case "-":
                         temp.push("-");				
-                        break;				
+                        break;
+                    case ":":
+                        temp.push(":");				
+                        break;                        
+                    case "/":
+                        temp.push("/");				
+                        break;                        
                     default:
                         temp.push("*");
                         this.randomCharacterNameLength++;
@@ -246,13 +262,17 @@ export default {
             }
             this.guessArray = temp;
         },
-
         evaluateGuess(guess){
+            let self = this
             var indexOfGuess=this.answerArray.indexOf(guess);
 
-            if (this.randomCharacterNameLength == 0){
-                alert ("name guessed!")
-                document.onkeyup = null;
+            if (self.randomCharacterNameLength == 0){
+                Swal.fire({
+                    title: 'You guessed it!ss',
+                    text: self.randomCharacterName,
+                    type: 'success',
+                    confirmButtonText: 'Cool'
+                })
             } 
             else{
                 if (indexOfGuess>=0){
@@ -265,20 +285,25 @@ export default {
 
                     }
                     if (this.randomCharacterNameLength == 0){
-                            alert ("name guessed!")
-                            document.onkeyup = null;	
+                            Swal.fire({
+                                title: 'You guessed it!',
+                                text: this.randomCharacterName,
+                                type: 'success',
+                                confirmButtonText: 'Cool'
+                            })
+                            //self.onkeyup = null;	
 
-                            document.getElementById("description").innerHTML= this.randomCharacterName;
-                            if (this.description){
-                                document.getElementById("description").innerHTML += ": " + this.description;
+                            self.$refs.description.innerHTML= this.randomCharacterName;
+                            if (this.description != 'no description provided by Marvel API'){
+                                self.$refs.description.innerHTML += ": " + this.description;
                             }	
                             else{
-                                document.getElementById("description").innerHTML += "<a href='" + this.wikiURL + "' target='blank'>" + " (more info)"  +"</a> ";
+                                self.$refs.description.innerHTML += "<a href='" + this.wikiURL + "' target='blank'>" + " (more info)"  +"</a> ";
                             }
                     
-                            document.getElementById('guessType').innerHTML="";		
+                            self.$refs.guessType.innerHTML="";		
                         }
-                        document.getElementById("marvelCharacter").innerHTML=printArray(this.guessArray);
+                        self.$refs.marvelCharacter.innerHTML=this.guessArray.join('');
                 } else{
                     // only update incorrect guess amount for new guesses
                     if (this.allGuessArray.indexOf(guess)<=0 ){
@@ -291,19 +316,17 @@ export default {
                 }
             }
         },
-
         convertToLowerCase(anArray){
             for (var i = 0; i < anArray.length; i++) {
                 anArray[i] = anArray[i].toLowerCase();
             }
         },
-
         // updates incorrect guessed amount and all letters chosen so far
         updateMessageBoard(){
             var message="";
             message += "<p> Incorrect guessed amount: " + this.incorrectGuessAmt + "<br>";
             message += "All guessed letters: " + this.allGuessArray.toString() + "<br></p>";
-            document.getElementById("messageboard").innerHTML = message;
+            this.$refs.messageboard.innerHTML = message;
         },
 
         // takes given array and returns as string
@@ -314,11 +337,26 @@ export default {
                 arrayString+=anArray[i];
             }
             return arrayString;
-        }        
-    }    
+        }, 
+        
+        keyMonitor: function(event) {
+            console.log(event.key);
+            this.gameInProgress = false;
+			if(this.isValidKey(event.key).length == 1 && this.allGuessArray.indexOf(event.key) < 0){    	
+                this.evaluateGuess(event.key);
+                this.updateMessageBoard();
+          }
+        }
+    },
+    mounted() {
+        let self = this; 
+        window.addEventListener('keyup', function(ev) {
+            self.keyMonitor(ev); // declared in your component methods
+        });
+    }       
 }
 </script>
-<style>
+<style lang="scss" scoped>
 iframe {
     border: 1px solid black;
     width: 85vw;
@@ -327,4 +365,38 @@ iframe {
 .fa-close {
     font-size: 1.5rem;
 }
+.container {
+    font-size: 2rem;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.modal-header {
+    & button {
+        border:none;
+    }
+}
+.modal-body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    text-align: center;
+}
+.topMinusNineThousand {
+    top: -9000px;
+    position: absolute;    
+}
+.topZero {
+    margin-top:7rem;
+}
+.mainCol{
+    & button {
+        font-size: 2rem;
+    }    
+}
+
 </style>
