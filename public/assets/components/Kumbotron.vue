@@ -9,11 +9,11 @@
             </div>
             <div class="card border-0 mt-5 bg-transparent ">
                 <div class="icons">
-                        <a href="https://github.com/keugenio" target="_blank"><i aria-hidden="true" class="fa fa-github"></i></a>
+                        <a href="https://github.com/keugenio" target="_blank"><i aria-hidden="true" class="fab fa-github"></i></a>
 
-                        <a href="https://www.facebook.com/kuieugenio" target="_blank"><i aria-hidden="true" class="fa fa-facebook-official"></i></a>
+                        <a href="https://www.facebook.com/kuieugenio" target="_blank"><i aria-hidden="true" class="fab fa-facebook"></i></a>
 
-                        <a href="https://www.linkedin.com/in/kui-eugenio-34ab289/" target="_blank"><i aria-hidden="true" class="fa fa-linkedin-square"></i></a>
+                        <a href="https://www.linkedin.com/in/kui-eugenio-34ab289/" target="_blank"><i aria-hidden="true" class="fab fa-linkedin-square"></i></a>
 
                         <a href="mailto:kui_eugenio@hotmail.com" target="_blank"><i aria-hidden="true" class="fa fa-envelope"></i></a>
 
