@@ -5,7 +5,7 @@
       <h4 class="card-title text-darkblue"><span class="title">What</span>&nbsp;I know</h4>
       <p class="card-text">HTML 5.0, CSS 3.0, Bootstrap, JavaScript, SASS, node.js, jQuery, React.js, React-Native, Redux, Express, Vue, Vuex, MYSQL, JSON, XML and API development. Utilizes GitHub & GitLab for version control and Heroku for deployment.</p>
       <div class="text-center my-3">
-        <button class="btn btn-large bg-canary border-dark-blue" href="assets/docs/Kui_Eugenio_resume.pdf">Download my Resume</button>
+        <a class="btn btn-large bg-canary border-dark-blue" target="_blank"  href="assets/docs/Kui_Eugenio_resume.pdf">Download my Resume</a>
       </div>
     </div>
     <!-- pono -->
@@ -19,29 +19,44 @@
     </div>
     <!-- Marvel Hangman -->
     <div class="card bg-success">
+        <div class="techIcons">
+          <i class="fab fa-vuejs"></i>
+          <i class="fab fa-html5"></i>
+          <i class="fab fa-css3"></i>
+          <i class="fab fa-node-js"></i>          
+        </div>
         <img class="card-img-top" src='../images/The_Marvel_Universe.png'/>
         <div class="card-body rounded">
           <h2 class="card-title text-white header-title">Marvel Hangman</h2>
-          <h4 class="card-text text-white">A twist on a classical game where we utilize the Marvel Developer API to get random images, their corresponding names and descriptions from their entire library of characters.</h4>
+          <h4 class="card-text text-white">A twist on a classical game where we utilize the Marvel Developer API to get random images, their corresponding names and descriptions from their entire library of characters.  The app is written in Vue and is a component of this site, a single file component written in Vue as well.</h4>
         </div>
         <div class="card-footer d-flex justify-content-around my-3">
-          <button class="btn bg-success border-dark-blue" data-target="#hangman-modal" data-toggle="modal" type="button" @click="showModal('Marvel')">Play</button>
-          <a href="https://github.com/keugenio/marvelHangman" class="btn btn-success" target="_blank">
-            <i class="fa fa-github rounded" aria-hidden="true"></i>
+          <button class="btn btn-success border-dark-blue" data-target="#hangman-modal" data-toggle="modal" type="button" @click="showModal('Marvel')">Play</button>
+          <a href="https://github.com/keugenio/kuieugenio.com" class="btn btn-success border-dark-blue" target="_blank">
+            <i class="fab fa-github rounded" aria-hidden="true"></i>
           </a>
         </div>
-    </div>    
+    </div>
+    <!-- profile image 1 -->
+    <div class="profileImage profileImage1">
+    </div>
     <!-- Ron Swanson -->
     <div class="card bg-success">
         <div class="card-block mb-3">
+        <div class="techIcons">
+          <i class="fab fa-react"></i>
+          <i class="fab fa-html5"></i>
+          <i class="fab fa-css3"></i>
+          <i class="fab fa-node-js"></i>          
+        </div>          
           <h2 class="card-title text-white">Quotes by Ron Swanson</h2>
           <h4 class="card-text text-white">Written in React and interacts with a PostgreSQL database hosted on Heroku. The app lets you rates quotes and tracks them by your IP address. Simple, humorous but highlights my backend and frontend skills.</h4>
         </div>
         <img class="card-img-bottom" src='../images/ronSwanson.png'/>
         <div class="card-footer d-flex justify-content-around my-3">
-          <button class="btn bg-success border-dark-blue" data-target="#hangman-modal" data-toggle="modal" type="button" @click="showModal('RonSwanson')">Try it</button>
-          <a href="https://github.com/keugenio/marvelHangman" class="btn btn-success" target="_blank">
-            <i class="fa fa-github rounded" aria-hidden="true"></i>
+          <button class="btn btn-success border-dark-blue" data-target="#hangman-modal" data-toggle="modal" type="button" @click="showModal('RonSwanson')">Try it</button>
+          <a href="https://github.com/keugenio/marvelHangman" class="btn btn-success border-dark-blue" target="_blank">
+            <i class="fab fa-github rounded" aria-hidden="true"></i>
           </a>
         </div>
     </div>
@@ -49,7 +64,10 @@
     <div class="card">
       <h4 class="card-title text-darkblue"><span class="title">Where</span> am I from</h4>
       <p class="card-text">I was born and raised on the island of Maui, the Valley Isle. I started my IT career upon graduating from the University of Hawaii for a telecom, quickly relocated to Southern California and finally laid my roots in the Valley of the Sun, AZ</p>
-    </div>    
+    </div>   
+    <!-- profile image 2 -->
+    <div class="profileImage profileImage2">
+    </div>     
     <!-- What's next -->
     <div class="card">
       <h4 class="card-title text-darkblue">What's Next?</h4>
@@ -66,17 +84,26 @@
         </footer>
       </blockquote>
     </div>
+    <!-- profile image3 -->
+    <div class="profileImage profileImage3">
+    </div>       
     <!-- Clicky -->
     <div class="card bg-success">
+        <div class="techIcons">
+          <i class="fab fa-react"></i>
+          <i class="fab fa-html5"></i>
+          <i class="fab fa-css3"></i>
+          <i class="fab fa-node-js"></i>          
+        </div>      
       <img class="card-img-top" src='../images/clicky.png'>
       <h2 class="card-title text-white">Clicky With Friends</h2>
       <h4 class="card-text text-white">Memorization game written with React and utilizes the random.me api for images. The interface is simple and the game intuitive but the backend is challenging and complex.</h4>
         <div class="card-footer  d-flex justify-content-around my-3">								
-            <button href="https://keugenio.github.io/clicky/" target="_blank" class="btn btn-success border-dark-blue" @click="showModal('Clicky')">
+            <button href="https://keugenio.github.io/clicky/" class="btn btn-success border-dark-blue" @click="showModal('Clicky')">
               Play
             </button>
-            <a href="https://github.com/keugenio/clicky" class="btn btn-success" target="_blank">
-              <i class="fa fa-github" aria-hidden="true"></i>
+            <a href="https://github.com/keugenio/clicky" class="btn btn-success border-dark-blue" target="_blank">
+              <i class="fab fa-github" aria-hidden="true"></i>
             </a>								
         </div>
     </div> 
@@ -159,9 +186,10 @@ export default {
       font-weight: 600;
     }
     & .card-img-top, .card-img-bottom {
-      max-width: 100%
+      max-width: 100%;
+      margin-bottom: 1rem;
     }
-    & button {
+    & a, button {
       font-size: 1.5rem;
       padding:.5rem 2rem;
       color: $color-dark-blue;
@@ -176,7 +204,6 @@ export default {
     & i {
       font-size: 3rem;
       padding: .5rem 2rem;
-      border: thin solid $color-dark-blue;
       color: $color-dark-blue;
       &:hover{
         color: $color-light-blue;
@@ -188,6 +215,16 @@ export default {
     & .card-footer {
       padding: 2rem;
     }
+    & .techIcons {
+        font-size: 1rem;
+        text-align: right;
+        & i {
+          padding: .25rem;
+        }
+      & .fab {
+        border: none;
+      }
+    }  
 
   }
   .bg-success {
@@ -203,4 +240,28 @@ export default {
       color: $color-dark-blue;
     }
   }
+  .profileImage {
+    background-size: cover;
+    width: 85%;
+    height:25vh;
+    border-radius: 1rem;
+    background-position:center; 
+    break-inside: avoid;
+    background-color: $color-light-blue;
+    opacity: .75;
+    margin-top: .75rem;
+    margin-bottom: .75rem;
+    margin-left:auto;
+    margin-right: auto;
+    &.profileImage1 {
+      background-image: url('../images/paddling_1.jpg');      
+    }
+    &.profileImage3 {
+      background-image: url('../images/paddling_2.jpg');      
+    } 
+    &.profileImage2 {
+      background-image: url('../images/bg.jpg');      
+    }     
+  }
+
 </style>
