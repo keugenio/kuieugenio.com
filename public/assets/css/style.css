@@ -1,0 +1,187 @@
+body{
+  padding: 0;
+  font-family: 'Arial', 'Helvetica Neue', Helvetica, serif;
+  font-size: 16px;
+  line-height: 150%;
+  color: #fff;!important
+  margin: 0 auto;
+  background-image: url("../images/bg.JPG");  
+  background-size: cover;
+  background-color: rgba(0, 0, 139, .6);
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;  
+}
+.bg-portfolio{
+  background-color: rgba(0, 0, 139, .6);
+}
+.portfolio-title{
+  font-family: 'Vollkorn', serif;
+}
+/* general tags */
+
+a{
+  color: #fff
+}
+a:link, a:visited {
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.hover-outline:hover, img.icon:hover, img.portfolio-image:hover{
+  outline: 2px solid #4aaaa5;
+  outline-offset: 5px;
+}
+
+.title{
+  color: #4aaaa5; 
+  font-weight: bold;
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Kaushan Script', cursive;
+}
+.row {
+  margin-bottom: 10px;
+}
+.bottomPadding {
+  margin-bottom: 10px;
+}
+
+.card-text, .card-title, text-darkblue, .card-outline-info>a{
+  color: #00008B;!important
+}
+.card-heading{
+  padding-top: 10px;
+}
+.card-clear{
+  background-color: rgba(255,0,0,0); 
+  border:none;
+}
+.card-img{
+  padding: 20px; 
+  opacity: .9;
+}
+.header-image{
+  background-image: url("../images/bio_image_main2.jpg"); 
+}
+.marvel-image{
+  display: block;
+  background: linear-gradient(
+      rgba(153, 0, 0, 0.65), 
+      rgba(153, 0, 0, 0.65)
+    ),
+    url("../images/The_Marvel_Universe.png");
+/*  height: 200px; !important*/
+  border-radius: 10px;
+}
+.center-block{
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-blockquote>footer{
+  color:#fff;
+}
+.jumbotron{
+  margin-top: 50px;
+  padding:20px;
+  margin: 0 auto;
+
+  background-size: cover;
+  opacity: .775;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;  
+  min-height: 768px;
+  margin-bottom: 50px;
+}
+.jumbotron>p{
+  color: #fff;
+}
+.modal{
+  color: #00008B;!important
+}
+.aloha{
+  font-family: 'Homemade Apple', cursive;
+  font-size: 28px;
+  font-weight: bolder;
+}
+.icons{
+  margin-top: 100px!important;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #ccc;
+    margin: 1em 0;
+    padding: 0; 
+}
+/*************** main window ******************/
+
+#main-content{
+    background-color: white;
+    border-radius: 15px;
+    margin: 2% 2% 0 2%;
+    padding: 10px;
+}
+
+
+
+.padding-0{
+    padding-right:0;
+    padding-left:0;
+}
+
+.img-fadein {
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -moz-animation: fadein 2s; /* Firefox */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera */
+    animation: fadein `2s;
+}
+    
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .75; }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .75; }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .75; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .75; }
+}​
+
+/* Opera */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .75; }
+}​
+
+
+@media only screen and (max-width: 768px) {  
+  body{
+    max-width: 768px;
+  }
+  h1{
+    font-size: 2em; 
+  }
+  .marvel-image{
+    display: none;
+  }  
+}
+

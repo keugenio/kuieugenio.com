@@ -1,0 +1,15 @@
+#contactModal {
+    & .modal-content {
+
+        & form {
+            padding-right: 15px;
+            & input,text-input {
+                width: 100%;
+            }
+            & textarea {
+                width:100%
+            }          
+        }
+
+    }
+}

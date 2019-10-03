@@ -1,0 +1,40 @@
+*{
+    margin: 0px;
+
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    @include response(bd) {
+        width: 75vw;
+        margin-left: auto!important;
+        margin-right: auto!important;
+        background-color: $color-white;        
+    }
+}
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+  }
+
+.vh{
+    &-75{
+        height:75vh;
+    }
+}
+
+.bg{
+    &-offwhite{
+        background-color: $color-off-white;        
+    }
+    &-dark-fade{
+        background-color: rgba($color-black, 0.5)
+    }
+    &-fixed{
+        background-attachment: fixed;
+    }
+    &-canary {
+        background-color: $color-yellow;
+    }
+
+}

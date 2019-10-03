@@ -1,0 +1,27 @@
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+
+@import "components/jumbotron";
+@import "components/navbar";
+@import "components/modal";
+@import "layout/_header";
+@import "pages/home";
+
+body {
+    background:$color-light-blue;
+    position:relative;
+    display: block;
+    width:100%;
+    background-image: $background-image;
+    background-size: cover;    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat; 
+}
