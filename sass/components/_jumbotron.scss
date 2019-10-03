@@ -1,0 +1,48 @@
+.jumbotron {
+    background-image: linear-gradient(to right, rgba($color-primary, 0.75), rgba($color-info, 0.05)) ;
+    background-color: $color-off-white; /* Used if the image is unavailable */
+    min-height: 95vh;/* You must set a specified height */
+    background-position: top right; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; 
+    background-attachment: fixed;
+    color:$color-off-white;   
+    @include lower_triangle;
+
+    &.row{
+    height: 100%;
+    display: table-row;        
+    }
+
+    @include response(phone){
+        background-image: linear-gradient(to right, rgba($color-primary, 0.75), rgba($color-info, 0.05)) ;
+    }
+    @include response(tabPort){
+        background-image: linear-gradient(to right, rgba($color-primary, 0.75), rgba($color-info, 0.05));
+    } 
+    @include response(tabLand){
+        background-image: linear-gradient(to right, rgba($color-primary, 0.75), rgba($color-info, 0.05));
+    }    
+}
+
+#jumbtron_button{
+    padding:10px 20px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: $color-info;
+    position: relative;
+    color: $color-primary;
+    transition: all .2s;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+
+    &:hover{
+        border-color:$color-off-white;
+        background-color: lighten($color-primary, 15%);
+        color:$color-white;
+        transform: translateY(-3px);
+        box-shadow: 0px 10px 20px rgba($color-black,.5);        
+    }
+}

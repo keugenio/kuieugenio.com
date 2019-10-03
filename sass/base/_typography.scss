@@ -1,0 +1,96 @@
+.text{
+    &-shadow-black {
+        text-shadow: 3px 3px 3px $color-black;
+    }
+    &-shadow-black-inverse {
+        text-shadow: 3px -3px 3px $color-black;
+    }
+}
+
+.display {
+    &-5{
+        font-size: 3em;
+        font-weight: 300;
+    }
+    &-6{
+        font-size: 2em;
+        font-weight: 300;        
+    }
+}
+
+.heading-white {
+    font-size: 3.5rem;
+    color:$color-off-white;
+}
+
+.heading-secondary {
+    font-size:3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display:inline-block;
+    background-image: linear-gradient(to right, $color-primary, $color-dark);
+    -webkit-background-clip: text;
+    background-clip:text;
+    color:transparent;
+    letter-spacing: .2rem;
+    @include response(phone){
+        font-size: 2.5rem;
+    }
+}
+.subtext {
+    font-size: 2rem;
+    font-weight:400;
+    color:$text-dark;
+}
+.subtext-light {
+    font-size: 2rem;
+    font-weight:200;
+    color:$text-dark;
+}
+
+ul li {
+    list-style: none;
+    font-size: 2rem;
+    font-weight: 200;
+    display: flex;
+}
+.custom_list {
+    & li {
+        @include response(phone) {
+            line-height: 1;
+            margin-bottom: 15px;        
+        }
+    }
+    & li:before {
+    font-family: 'FontAwesome';
+    content: "\f192";
+    color: $color-white;
+    margin-right:15px;
+    display: block;
+
+    @include response(phone){
+        top: 5px;
+        position: relative;    
+    }
+   }
+}
+
+.about-blockquote {
+    margin:5%;
+    font-size: 1.5rem;
+    border-left: solid thin $color-dark;
+    padding-left: 25px;
+    text-align:left;
+    @include response(phone) {
+        text-align: justify;
+        border-left:none;
+        padding:0px;
+        line-height: 1.2;
+    }
+}
+.text-dark-blue {
+    color: $color-dark-blue;
+}
+.footer {
+    font-size: .75em;
+}
