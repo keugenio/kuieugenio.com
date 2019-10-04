@@ -15,6 +15,7 @@
             </div>
             <div v-else class="mx-auto fa-5x" :class="[!hideOffScreen ? 'topZero' : 'topMinusNineThousand']">
                 <i class="fa fa-cog fa-spin text-primary"></i>
+                <p style="font-size:2rem">downloading character information from Marvel Studios. Please be patient...</p>
             </div>
              <div class="row mainCol" :class="[hideOffScreen ? 'topZero' : 'topMinusNineThousand']">
                 <div class="col-sm-6">
@@ -55,7 +56,7 @@ export default {
     data: function(){
         return {
             hash:marvelKeys.hash,
-            publickey : marvelKeys.public,
+            publickey : marvelKeys.publickey,
             startsWith:'',
             offset:0,
             randomCharacterName:0,
@@ -268,10 +269,10 @@ export default {
 
             if (self.randomCharacterNameLength == 0){
                 Swal.fire({
-                    title: 'You guessed it!ss',
-                    text: self.randomCharacterName,
-                    type: 'success',
-                    confirmButtonText: 'Cool'
+                    title: 'Something went wrong... ',
+                    text: 'The character info was not downloaded correctly, please try again.',
+                    type: 'error',
+                    confirmButtonText: 'OK'
                 })
             } 
             else{
@@ -340,7 +341,6 @@ export default {
         }, 
         
         keyMonitor: function(event) {
-            console.log(event.key);
             this.gameInProgress = false;
 			if(this.isValidKey(event.key).length == 1 && this.allGuessArray.indexOf(event.key) < 0){    	
                 this.evaluateGuess(event.key);
