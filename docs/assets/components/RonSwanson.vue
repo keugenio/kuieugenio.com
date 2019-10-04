@@ -4,7 +4,7 @@
         <button class="ml-auto" @click="$emit('close')">
             <i class="fa fa-close" />
         </button>
-        <div v-if="loading" class="fa-3x"><i class="fa fa-cog fa-spin"></i><span >This app runs on Heroku with limited dynos. Please be patient as it loads</span></div>
+        <div v-if="loading" class="fa-3x"><i class="fa fa-cog fa-spin"></i><span >This app runs on Heroku with limited dynos. The first time it runs, it takes a long time to wake up the app.  Please be patient as it loads</span></div>
         <iframe v-on:load="toggleOnLoadIcon" class="mx-auto my-2" id="RonSwanson"
             src="https://ron-swanson-2019.herokuapp.com/">
         </iframe>
